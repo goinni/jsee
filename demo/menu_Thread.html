@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSEE案例-Thread</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/document_index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jsee.src.min.1.5.2.js"></script>
+<style type="text/css">
+.democontant font{ font-family:"新宋体", "宋体", "黑体";}
+.democontant pre{ 
+	display:block;
+	margin:10px;
+	padding:10px;
+	border:1px dashed #999;
+	font-family:Verdana, Geneva, sans-serif; 
+	font-size:12px;
+	line-height:22px;
+}
+.democontant b{ color:#e69e38;}
+</style>
+</head>
+
+<body>
+<div class="area">
+    <div class="logo"></div>
+    <ul class="nav">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../document_Element.html">JSEE文档</a></li>
+        <li><a href="menu_Map.html">JSEE案例</a></li>
+        <li><a href="../menu_aboutme.html">关于我们</a></li>
+        <li><a href="../menu_download.html">下载</a></li>
+        <li><a href="../menu_book.html">J-SVG</a></li>
+    </ul>
+</div>
+<div class="top-line"></div>
+
+<div class="area b-line">
+	<div class="curr-tip">当前位置：</div>
+    <div class="curr-o">JSEE案例</div>
+</div>
+<div class="area countant-bg">
+	<div class="entity-box" style="width:192px; float:left;">
+    	<div class="entity-o"><a href="menu_Map.html">Map</a></div>
+        <div class="entity-o e-oselected"><a href="menu_Thread.html">Thread</a></div>
+        <div class="entity-o"><a href="menu_Timer.html">Timer</a></div>
+        <div class="entity-o"><a href="menu_Event.html">Event</a></div> 
+    	<div class="entity-o"><a href="menu_String.html">String</a></div>
+    </div>
+
+	<div class="democontant">
+
+<pre>
+<b>part 1.定义一个Thread对象</b>      
+var i = 0;
+var thread = new Thread(function(){
+	var t = new Date().getSeconds();<font>//获取当前秒数</font>	
+	if(t==59) this.stop(); <font>//秒数为59秒是 停止线程; this表示当前线程</font>
+	if(t==20) this.sleep(3000); <font>//秒数为20秒时暂停3秒后再执行</font>
+    <font>//如果sleep()无参数则会一直等待下去，至到触发notify()方法时才会重新唤醒线程</font>
+	if(t==30) this.setTime(200);<font>//秒数为30秒时重置线程执行频率为200毫秒。(初始值为1)</font>
+	//this.time = 1;<font>//可以设置初始频率 单位毫秒</font>
+	document.getElementById("tipbox").innerHTML = "当前秒数为"+t +" 速度标记"+i++;
+});
+<font>//启动线程,也可以new Thread(run).start();</font>
+thread.start();
+<script type="text/javascript">
+var i = 0,text;
+var thread = new Thread(function(){
+	var t = new Date().getSeconds();
+	(this.time ==1) && (text = "正常");
+	if(t==59) {this.stop(); text = "线程停止"}//秒数为59秒是 停止线程
+	if(t==20) {this.sleep(3000); text = "暂停"} //秒数为20秒时暂停3秒后再执行
+	if(t==30) {this.setTime(200); text = "频率改变"}//秒数为30秒时重置线程执行频率,初始值为1
+	//this.time = 1;//可以设置初始频率 单位毫秒
+	document.getElementById("tipbox").innerHTML = "当前秒数为"+t +" 速度标记"+ (i++) +" [当前状态]"+text;
+});
+//启动线程,也可以new Thread(run).start();
+thread.start();
+</script>
+<b>刷新页面观察下面数据</b>
+<font id="tipbox"></font>
+</pre>
+
+
+    </div>
+
+</div>
+<div class="top-line"></div>
+<div class="area footer">
+	<p>辽ICP备13008130号　Copyright © 20013-2016,  js-ee.cn, All Rights Reserved  </p>
+    <div class="baiducount">
+		<script type="text/javascript">
+        	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+       	 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F97686d405b084abb83a469163765e8cc' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+
+</body>
+</html>

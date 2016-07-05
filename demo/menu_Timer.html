@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSEE案例-Timer</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/document_index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jsee.src.min.1.5.2.js"></script>
+<style type="text/css">
+.democontant font{ font-family:"新宋体", "宋体", "黑体";}
+.democontant pre{ 
+	display:block;
+	margin:10px;
+	padding:10px;
+	border:1px dashed #999;
+	font-family:Verdana, Geneva, sans-serif; 
+	font-size:12px;
+	line-height:22px;
+}
+.democontant b{ color:#e69e38;}
+</style>
+</head>
+
+<body>
+<div class="area">
+    <div class="logo"></div>
+    <ul class="nav">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../document_Element.html">JSEE文档</a></li>
+        <li><a href="menu_Map.html">JSEE案例</a></li>
+        <li><a href="../menu_aboutme.html">关于我们</a></li>
+        <li><a href="../menu_download.html">下载</a></li>
+        <li><a href="../menu_book.html">J-SVG</a></li>
+    </ul>
+</div>
+<div class="top-line"></div>
+
+<div class="area b-line">
+	<div class="curr-tip">当前位置：</div>
+    <div class="curr-o">JSEE案例</div>
+</div>
+<div class="area countant-bg">
+	<div class="entity-box" style="width:192px; float:left;">
+    	<div class="entity-o"><a href="menu_Map.html">Map</a></div>
+        <div class="entity-o"><a href="menu_Thread.html">Thread</a></div>
+        <div class="entity-o e-oselected"><a href="menu_Timer.html">Timer</a></div>
+        <div class="entity-o"><a href="menu_Event.html">Event</a></div> 
+    	<div class="entity-o"><a href="menu_String.html">String</a></div>
+    </div>
+
+	<div class="democontant">
+
+<pre>
+<b>part 1.定义一个Timer对象</b>      
+$(function(){
+<font>//页面加载完成已后执行以下内容</font>
+var pp = $("#tipbox").entity();
+<font>//定义一个Timer对象</font>
+var timer = new Timer(
+	function(time){
+    	<font>//time为当前计时器运行的毫秒数</font>
+		if(time >= 5000) {
+			<font>//计时器启动5秒后停止,this表示当前timer对象</font>
+			this.stop();
+		}
+		<font>//每隔100毫秒对数据进行累加一次</font>
+		pp.innerHTML =parseFloat(pp.innerHTML)+1;   
+	}
+,100);<font>//每隔100毫秒执行一次</font>
+<font>//启动计时器</font>
+timer.start();
+});
+<script type="text/javascript">
+$(function(){
+//页面加载完成已后执行以下内容
+var pp = $("#tipbox").entity();
+var timer = new Timer(
+	function(time){
+		if(time >= 5000) {
+			//计时器启动5秒后停止,this表示当前timer对象
+			this.stop();
+		}
+		//每隔100毫秒对数据进行累加一次
+		pp.innerHTML =parseFloat(pp.innerHTML)+1;   
+	}
+,100);
+//启动计时器
+timer.start();
+});
+</script>
+<b>刷新页面观察下面数据</b>
+计时器启动5秒后停止累加:<font id="tipbox">0</font>
+
+</pre>
+
+
+    </div>
+
+</div>
+<div class="top-line"></div>
+<div class="area footer">
+	<p>辽ICP备13008130号　Copyright © 20013-2016,  js-ee.cn, All Rights Reserved  </p>
+    <div class="baiducount">
+		<script type="text/javascript">
+        	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+       	 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F97686d405b084abb83a469163765e8cc' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+
+</body>
+</html>

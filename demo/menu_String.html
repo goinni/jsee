@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSEE案例-String</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/document_index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jsee.src.min.1.5.2.js"></script>
+<style type="text/css">
+.democontant font{ font-family:"新宋体", "宋体", "黑体";}
+.democontant pre{ 
+	display:block;
+	margin:10px;
+	padding:10px;
+	border:1px dashed #999;
+	font-family:Verdana, Geneva, sans-serif; 
+	font-size:12px;
+	line-height:22px;
+}
+.democontant b{ color:#e69e38;}
+</style>
+</head>
+
+<body>
+<div class="area">
+    <div class="logo"></div>
+    <ul class="nav">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../document_Element.html">JSEE文档</a></li>
+        <li><a href="menu_Map.html">JSEE案例</a></li>
+        <li><a href="../menu_aboutme.html">关于我们</a></li>
+        <li><a href="../menu_download.html">下载</a></li>
+        <li><a href="../menu_book.html">J-SVG</a></li>
+    </ul>
+</div>
+<div class="top-line"></div>
+
+<div class="area b-line">
+	<div class="curr-tip">当前位置：</div>
+    <div class="curr-o">JSEE案例</div>
+</div>
+<div class="area countant-bg">
+	<div class="entity-box" style="width:192px; float:left;">
+    	<div class="entity-o"><a href="menu_Map.html">Map</a></div>
+        <div class="entity-o"><a href="menu_Thread.html">Thread</a></div>
+        <div class="entity-o"><a href="menu_Timer.html">Timer</a></div>
+        <div class="entity-o"><a href="menu_Event.html">Event</a></div> 
+    	<div class="entity-o e-oselected"><a href="menu_String.html">String</a></div>
+
+    </div>
+
+	<div class="democontant">
+
+<pre>
+<b>part 1.截取字符串</b>      
+var text = "abc123456";
+text.subString(3); <font>// 结果为 123456</font>
+text.subString(3,6); <font>//结果为 123</font>
+text.subString(3,6,true); <font>//结果为 123...</font>
+</pre>
+<pre>
+<b>part 2.去空格</b>      
+var text = " a b c 1 2 3 4 5 6 ";
+text.trims(); <font>// 结果为abc123456</font>
+</pre>
+<pre>
+<b>part 3.检查A字符串是否在B字符串内</b>      
+var text_A  = "1a2346";
+var text_B = "123456798abcdefg";
+text_A.isBelong(text_B); <font>//结果为true; [注]text_B缺省值为"A~Za~z0~9"</font>
+</pre>
+<pre>
+<b>part 4.将html字符串转为节点对象</b> 
+var htmlStr = "&lt;div>内容1&lt;/div>&lt;div>内容2&lt;/div>";
+var newDom = htmlStr.toDom(); <font>//转换后的节点对象都是newDom的子节点</font>
+var nDom = $(newDom).children();
+nDom.eq(0).getHtml();<font>//结果为: 内容1</font>
+nDom.eq(1).getHtml();<font>//结果为: 内容2</font>
+</pre>
+    </div>
+
+</div>
+<div class="top-line"></div>
+<div class="area footer">
+	<p>辽ICP备13008130号　Copyright © 20013-2016,  js-ee.cn, All Rights Reserved  </p>
+    <div class="baiducount">
+		<script type="text/javascript">
+        	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+       	 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F97686d405b084abb83a469163765e8cc' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+
+</body>
+</html>

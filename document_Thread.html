@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSEE Thread对象</title>
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/document_index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jsee.src.min.1.5.2.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+</head>
+
+<body>
+<div class="area">
+    <div class="logo"></div>
+    <ul class="nav">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="document_Element.html">JSEE文档</a></li>
+        <li><a href="demo/menu_Map.html">JSEE案例</a></li>
+        <li><a href="menu_aboutme.html">关于我们</a></li>
+        <li><a href="menu_download.html">下载</a></li>
+        <li><a href="menu_book.html">J-SVG</a></li>
+    </ul>
+</div>
+<div class="top-line"></div>
+<div class="area">
+	<div class="entity-box">
+    	<div class="entity-o"><a href="document_Element.html#link_Element">Jsee</a></div>
+    	<div class="entity-o"><a href="document_Map.html#link_map">Map</a></div>
+        <div class="currNav"><a href="document_Thread.html#link_thread">Thread</a></div>
+        <div class="entity-o"><a href="document_Timer.html#link_timer">Timer</a></div>
+        <div class="entity-o"><a href="document_List.html#link_list">Array</a></div>
+        <div class="entity-o"><a href="document_Event.html#link_event">Event</a></div>
+        
+    	<div class="entity-o"><a href="document_String.html#link_string">String</a></div>
+        <div class="entity-o"><a href="document_DateTool.html#link_dateTool">Date</a></div>
+    	<div class="entity-o"><a href="document_PageContext.html#link_PageContext">PageContext</a></div>
+        <div class="entity-o"><a href="document_Cookie.html#link_Cookie">Cookie</a></div>
+    </div>
+    <div class="top-line"></div>
+</div>
+<div class="area b-line">
+	<div class="curr-tip">当前对象为：</div>
+    <div class="curr-o" id="link_thread" name="link_thread">Thread</div>
+</div>
+<div class="area countant-bg">
+<dl>
+	<dt class="m-title">对象说明:</dt>
+	<dd class="m-title">
+    	Thread是一个理想的线程，并不是真证的多线程，它可以很好的控制一个任务的开始、停止、暂停、执行频率、休眠等。
+	</dd>
+</dl>
+<dl id="fn_menu">
+	<dt class="m-title">方法摘要:</dt>
+	<dd class="m-title"><h1>返回值</h1><h2>方法名</h2><h3>方法说明</h3></dd>
+    <dd><h1>无</h1><h2><a href="#link_start">start()</a></h2><h3>使该线程开始执行调用该线程的 run 方法。</h3></dd>
+    <dd><h1>无</h1><h2><a href="#link_stop">stop()</a></h2><h3>终止线程</h3></dd>
+    <dd><h1>无</h1><h2><a href="#link_setTime">setTime(time)</a></h2><h3>设置执行线程的时间间隔</h3></dd>
+    <dd><h1>无</h1><h2><a href="#link_sleep">sleep(time)</a></h2><h3>在指定的毫秒数内让当前正在执行的线程休眠（暂停执行）。</h3></dd>
+    <dd><h1>无</h1><h2><a href="#link_notify">notify()</a></h2><h3>换醒休眠线程。</h3></dd>
+</dl>
+<dl>
+	<dt>方法详细信息:</dt>
+	<dd>
+<pre>
+<b id="link_start" name="link_start">start</b>
+start()使该线程开始执行调用该线程的 run 方法
+如：var t = new Thread(run); t.start()
+<b>参数：</b>
+无 
+<b>返回：</b>
+无。 
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_stop" name="link_stop">stop</b>
+stop()终止线程
+<b>参数：</b>
+无
+<b>返回：</b>
+无。 
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_setTime" name="link_setTime">setTime</b>
+setTime(time) 设置执行线程的频率 [单位毫秒]
+<b>参数：</b>
+无。
+<b>返回：</b>
+无。 
+</pre>    
+    </dd>
+    <dd>
+<pre>
+<b id="link_sleep" name="link_sleep">sleep</b>
+sleep(time) 在指定的毫秒数内让当前正在执行的线程休眠（暂停执行）。
+<b>参数：</b>
+time 线程休眠时间 [单位毫秒]。
+<b>返回：</b>
+无 
+</pre>       
+    </dd>
+    <dd>
+<pre>
+<b id="link_notify" name="link_notify">notify</b>
+notify() 换醒休眠线程。
+<b>参数：</b>
+无 
+<b>返回：</b>
+无。 
+</pre>       
+    </dd>
+</dl>
+
+
+
+</div>
+<div class="top-line"></div>
+<div class="area footer">
+	<p>辽ICP备13008130号　Copyright © 20013-2016,  js-ee.cn, All Rights Reserved  </p>
+    <div class="baiducount">
+		<script type="text/javascript">
+        	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+       	 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F97686d405b084abb83a469163765e8cc' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+
+</body>
+</html>

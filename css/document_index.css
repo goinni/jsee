@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* 
+JSEE CSS Document 
+Author HOUZHENYU
+*/
+
+.logo{
+	width:285px;
+ 	height:119px;
+	float:left;
+	overflow:hidden;
+	background:url(../images/content/logo.jpg) left top no-repeat;
+}
+
+.nav{
+	float:left;
+	width:680px;
+	margin:60px 0 0 30px;
+	height:auto;
+	overflow:hidden;
+}
+.nav li{
+	line-height:56px;
+	height:56px;
+	overflow:hidden;
+	float:left;
+	padding:0 16px;
+}
+.nav li a{
+	color:#e29b38;
+	font-size:24px;
+	font-weight:blod;
+}
+.democontant{
+	width:756px;
+	height:1150px;
+	overflow:hidden;
+	margin-top:10px;
+	float:left;
+	background:url(../images/content/class_bg.jpg) left top repeat;
+}
+
+.entity-box{
+	width:976px;
+	height:auto;
+	overflow:hidden;
+	padding:0 0 10px 26px;
+}
+.entity-o,.currNav{
+	width:182px;
+	height:48px;
+	line-height:48px;
+	text-align:center;
+	overflow:hidden;
+	margin:10px 10px 0 0;
+	float:left;
+}
+.entity-o{
+	background:url(../images/content/class_bg.jpg) left top repeat;
+}
+.currNav{
+	background: url(../images/content/y_bg.jpg) left top repeat;
+}
+.entity-o a,.currNav a{
+	color:#FFF;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-size:18px;
+	font-weight:bold;
+}
+.e-oselected,.e-oselected a{ background:url(../images/content/y_bg.jpg) left top repeat; color:#e69e38;}
+.curr-tip{
+	width:130px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	overflow:hidden;
+	margin:10px 0 0 26px;
+	float:left;
+	color:#e69e38;
+	font-size:18px;
+	background:url(../images/content/y_bg.jpg) left top repeat;
+}
+.curr-o{
+	width:180px;
+	height:40px;
+	line-height:40px;
+	text-indent:10px;
+	color:#ff0000;
+	margin:10px 0 0 0;
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	overflow:hidden;
+}
+.b-line{
+	background:url(../images/content/y_bg.jpg) left bottom repeat-x;
+}
+.countant-bg{
+	margin:10px auto;
+	color:#FFF;
+	background:url(../images/content/cbg.jpg) left top repeat;
+}
+/*
+.countant-bg p{
+	line-height:20px;
+	font-size:12px;
+	padding:10px;	
+}
+*/
+.countant-bg dl,.countant-bg dt,.countant-bg dd{
+	display:block;
+	width:100%;
+	height:auto;
+	overflow:hidden;
+}
+.countant-bg dl{
+	width:982px;
+	padding:10px;
+}
+.countant-bg dt{
+	font-size:14px;
+	font-weight:bold;	
+	line-height:28px;
+	border-bottom:5px solid #666;
+}
+.countant-bg dd{
+	width:962px;
+	clear:both;
+	line-height:24px;
+	padding:0 10px;
+	border-bottom:1px solid #666;
+}
+.countant-bg dd h1,.countant-bg dd h2,.countant-bg dd h3{
+	float:left;
+	font-size:12px;
+	font-weight:normal;
+	text-indent:6pt;
+	display:block;
+	overflow:hidden;
+}
+.countant-bg dd h1{
+	width:15%;
+	border-right:1px solid #666;
+}
+.countant-bg dd h2{
+	width:20%;
+	font-family:Arial, Helvetica, sans-serif;
+	border-right:1px solid #666;
+}
+.countant-bg dd h3{
+	width:63%;
+}
+.countant-bg dd pre b{
+	color:#999;
+	font-size:14px;
+}
+.dd_bg{
+	background:#4B4B4B;
+}
+.countant-bg dd h2 a{
+	color:#FFF;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.countant-bg dd h2 a:hover{
+	text-decoration:underline;
+}

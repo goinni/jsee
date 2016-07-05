@@ -1,0 +1,727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSEE 对象</title>
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/document_index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jsee.src.min.1.5.2.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+</head>
+
+<body>
+<div class="area">
+    <div class="logo"></div>
+    <ul class="nav">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="document_Element.html">JSEE文档</a></li>
+        <li><a href="demo/menu_Map.html">JSEE案例</a></li>
+        <li><a href="menu_aboutme.html">关于我们</a></li>
+        <li><a href="menu_download.html">下载</a></li>
+        <li><a href="menu_book.html">J-SVG</a></li>
+    </ul>
+</div>
+<div class="top-line"></div>
+<div class="area">
+	<div class="entity-box">
+    	<div class="currNav"><a href="document_Element.html#link_Element">Jsee</a></div>
+    	<div class="entity-o"><a href="document_Map.html#link_map">Map</a></div>
+        <div class="entity-o"><a href="document_Thread.html#link_thread">Thread</a></div>
+        <div class="entity-o"><a href="document_Timer.html#link_timer">Timer</a></div>
+        <div class="entity-o"><a href="document_List.html#link_list">Array</a></div>
+        <div class="entity-o"><a href="document_Event.html#link_event">Event</a></div>
+        
+    	<div class="entity-o"><a href="document_String.html#link_string">String</a></div>
+        <div class="entity-o"><a href="document_DateTool.html#link_dateTool">Date</a></div>
+    	<div class="entity-o"><a href="document_PageContext.html#link_PageContext">PageContext</a></div>
+        <div class="entity-o"><a href="document_Cookie.html#link_Cookie">Cookie</a></div>
+    </div>
+    <div class="top-line"></div>
+</div>
+<div class="area b-line">
+	<div class="curr-tip">当前对象为：</div>
+    <div class="curr-o" id="link_Element" name="link_Element">Jsee或$</div>
+</div>
+<div class="area countant-bg">
+<dl>
+	<dt class="m-title">对象说明:</dt>
+	<dd class="m-title">
+    <pre>
+Jsee对象中包含很多常用方法与特效;
+$符号等同于Jsee;
+$.browser是浏览器类型对象
+$.browser.msie表示IE;$.browser.firefox表示火狐;$.browser.chrome表示谷歌;$.browser.opera表示欧鹏;$.browser.safari表示苹果
+$.isJson(o);校验json对象
+$.isArray(o);校验数组对象
+$.equal(o1,o2);校验o1是否与o2相等
+$.isEmpty(o);校验对象是否为空
+$.isFunction(o);校验对象是否为方法
+$.isHtmlElement(o);校验对象是否为html对象
+$.isJsee(o);校验对象是否为JSEE对象
+$.ajax(o);ajax请求
+$.ajax({
+url:'/xx.do',
+type:'POST',
+callback:function(data){},
+error:function(e){}
+});
+<hr />
+选择器参数
+$(fn);
+$(对象)
+$(参数为数组对象)
+$(参数为*获取所有元素)
+$(#ID)
+$(.class名)
+$(参数为标签名)
+$(参数为标签名和ID 如: div#id)
+$(参数为标签名和类名 如: div.class)
+$(属性div[xx=xxx])
+$(属性[xx=xxx])
+$(标签创建 如：&lt;div>)//支持svg标签创建
+$(html字符串创建)//返回一个对象，它的子节点为html字符串
+
+    </pre>   
+    </dd>
+</dl>
+<dl id="fn_menu">
+	<dt class="m-title">方法摘要:</dt>
+	<dd class="m-title"><h1>返回值</h1><h2>方法名</h2><h3>方法说明</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_eq">eq(index)</a></h2><h3>获取集合中指定对象</h3></dd>
+    <dd><h1>Dom对象</h1><h2><a href="#link_entity">entity()</a></h2><h3>获取当前选择器中存放的DOM对象.</h3></dd>
+    <dd><h1>int对象</h1><h2><a href="#link_size">size()</a></h2><h3>获取当前选择器中存放的对象长度.</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_getCss">getCss(arg)</a></h2><h3>获取element对象的CSS样式, [对一个对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_setCss">setCss(params)</a></h2><h3>设置对象的CSS样式 [对一组对象有效]params css对象键值对形式如{key:value}</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_setOpacity">setOpacity(arg)</a></h2><h3>设置对象不透明度[对一组对象有效]。arg取值范围(0~1)</h3></dd>
+    
+    <dd><h1>int</h1><h2><a href="#link_getOpacity">getOpacity()</a></h2><h3>获取对象不透明度[对一个对象有效]。</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_prev">prev()</a></h2><h3>获取同辈相邻上一个节点[对一个对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_next">next()</a></h2><h3>获取同辈相邻下一个节点[对一个对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_first">first()</a></h2><h3>获取第一个子节点[对一个对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_last">last()</a></h2><h3>获取最后一个子节点[对一个对象有效]</h3></dd>
+   
+    <dd><h1>Jsee对象</h1><h2><a href="#link_child">children()</a></h2><h3>获取所有子节点不包括孙节点[对一个对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_childs">find()</a></h2><h3>获取所有子节点包括孙节点[对一个对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_left">coord()</a></h2><h3>获取元素在当前窗口中坐标[对一个对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_getAttr">getAttr(arg)</a></h2><h3>获取dom对象属性获取[对一个对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_setAttr">setAttr(params)</a></h2><h3>dom对象属性设置[对一组对象有效]params {key:value} key属性名 value属性值</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_removeAttr">removeAttr(value)</a></h2><h3>移除元素属性</h3></dd>
+   
+    <dd><h1>Jsee对象</h1><h2><a href="#link_getCursorPosition">getCursor()</a></h2><h3>获取光标位置 input 或 textarea 对象[对一个对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_setCursorPosition">setCursor(pos)</a></h2><h3>设置光标位置input 或 textarea 对象[对一个对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_bind">bind(params)</a></h2><h3>事件绑定[对一组对象有效]params {key:value} key事件类型 value回调方法</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_live">live(params)</a></h2><h3>事件委派[对一组对象有效]params {key:value} key事件类型 value回调方法</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_search">search(key,callback)</a></h2><h3>关键字搜索[可以对一组对象进行搜索]key关键字 callback 回调方法</h3></dd>
+   
+    <dd><h1>Jsee对象</h1><h2><a href="#link_clone">clone(f)</a></h2><h3>对象克隆[对一个对象有效] f 为true时 克隆当前节点以及子节点，为false时或缺省时 克隆当前节点</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_append">append(o)</a></h2><h3>将指定arg对象变成当前对象的最后一个子节点[对一组对象有效]o 选择器参数</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_appendTo">appendTo(o)</a></h2><h3>将当前对象添加到指定对象的最后一个子节点[对一组对象有效]o 选择器参数</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_fadeIn">fadeIn(param,speed,callback)</a></h2>
+    <h3>动画淡入 param淡入到的值 缺省值1, speed 速度值 缺省值500,callback 中this为当前对象</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_fadeOut">fadeOut(param,speed,callback)</a></h2>
+    <h3>动画淡出 param淡出到的值 缺省值1, speed 速度值 缺省值500,callback 中this为当前对象</h3></dd>
+   
+    <dd><h1>Jsee对象</h1><h2><a href="#link_fadeToggle">fadeToggle(speed,callback)</a></h2><h3>淡入淡出切换 speed 速度 callback 回调方法,callback 中this指向当前动画对象</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_slideDown">slideDown(speed,cback)</a></h2>
+    <h3>动画伸展  speed 速度 cback 回调方法cback 中this指向当前动画对象</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_slideUp">slideUp(speed,callback)</a></h2><h3>动画收缩 speed 速度 callback 回调方法,callback 中this指向当前动画对象</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_slideToggle">slideToggle(speed,callback)</a></h2><h3>伸展收缩切换 speed 速度,callback 回调方法,callback 中this指向当前动画对象</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_animate">animate(param,speed,callback)</a></h2><h3>自定义动画 param动画属性对象 speed 速度, callback 中this指向当前动画对象</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_setHtml">setHtml(value)</a></h2><h3>可对多个对象进行设置html内容</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_getHtml">getHtml()</a></h2><h3>获取一个对象的html内容</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_setValue">setValue(value)</a></h2><h3>设置input对象的value内容 对象只能为[input/textarea]</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_getValue">getValue()</a></h2><h3>获取input对象的value内容  [对一个对象有效]对象只能为[input/textarea]</h3></dd>
+    <dd><h1>boole</h1><h2><a href="#link_hasClass">hasClass(name)</a></h2><h3>校验一个对象是否包含指定类名</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_removeClass">removeClass(name)</a></h2><h3>移除指定类名</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_addClass">addClass(name)</a></h2><h3>添加指定类名</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_masker">masker(v)</a></h2><h3>参数为0时移除遮罩,不等于0时设置遮罩内容</h3></dd>
+    
+    <dd><h1>Jsee对象</h1><h2><a href="#link_end">end()</a></h2><h3>破坏性操作后返回上一级对象</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_remove">remove()</a></h2><h3>移出对象[对一组对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_empty">empty()</a></h2><h3>清空对象内容[对一组对象有效]</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_insertBefore">insertBefore(o)</a></h2><h3>在对象前面插入[对一组对象有效];o 选择器参数</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_insertAfter">insertAfter(o)</a></h2><h3>在对象后面插入[对一组对象有效];o 选择器参数</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_replaceAll">replaceAll(o)</a></h2><h3>替换对象[对一组对象有效];o 选择器参数</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_parent">parent(o)</a></h2><h3>获取对象父节点[对一个对象有效] 破坏性操作;o 选择器参数</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_each">each(callback)</a></h2><h3>循环. json/array</h3></dd>
+    <dd><h1>Jsee对象</h1><h2><a href="#link_onDrag">onDrag(callback)</a></h2><h3>拖动</h3></dd>
+    
+    
+</dl>
+<dl>
+	<dt>方法详细信息:</dt>
+	<dd>
+<pre>
+<b id="link_eq" name="link_eq">eq</b>
+eq(index)获取集合中指定对象
+<b>参数：</b>
+index - 数组索引值
+<b>返回：</b>
+dom对象。 
+</pre>
+    </dd>
+	<dd>
+<pre>
+<b id="link_entity" name="link_entity">entity</b>
+entity()获取当前选择器中存放的DOM对象,调用此方法后就不能再继续选择器中的方法，但可以获取对象自身的属性和方法
+<b>参数：</b>
+无
+<b>返回：</b>
+dom对象。 
+</pre>
+    </dd>
+	<dd>
+<pre>
+<b id="link_size" name="link_size">size</b>
+size()获取当前选择器中存放的对象长度
+<b>参数：</b>
+无
+<b>返回：</b>
+int。 
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_getCss" name="link_getCss">getCss</b>
+getCss(arg)获取element对象的CSS样式, [只能获取一个对象的某个样式属性]
+<b>参数：</b>
+arg - CSS样式名称
+<b>返回：</b>
+string。 
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_setCss" name="link_setCss">setCss</b>
+setCss(params) 设置对象的CSS样式 [对一组对象有效]
+<b>参数：</b>
+params -  css对象键值对形式如{key:value}。
+<b>返回：</b>
+Jsee对象。 
+</pre>    
+    </dd>
+    <dd>
+<pre>
+<b id="link_setOpacity" name="link_setOpacity">setOpacity</b>
+setOpacity(arg) 设置对象不透明度[对一组对象有效]。
+<b>参数：</b>
+arg - 不透明度 取值范围(0~1)。
+<b>返回：</b>
+Jsee对象。 
+</pre>       
+    </dd>
+    
+    
+    <dd>
+<pre>
+<b id="link_getOpacity" name="link_getOpacity">getOpacity</b>
+getOpacity() 获取对象不透明度[对一个对象有效]。
+<b>参数：</b>
+无。
+<b>返回：</b>
+int。 
+</pre>       
+    </dd>
+    <dd>
+<pre>
+<b id="link_prev" name="link_prev">prev</b>
+prev() 获取同辈相邻上一个节点[对一个对象有效]。
+<b>参数：</b>
+无。
+<b>返回：</b>
+Jsee对象。 
+</pre>     
+    </dd>
+    <dd>
+<pre>
+<b id="link_next" name="link_next">next</b>
+next() 获取同辈相邻下一个节点[对一个对象有效]。
+<b>参数：</b>
+无。
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>
+    <dd>
+<pre>
+<b id="link_first" name="link_first">first</b>
+first() 获取第一个子节点[对一个对象有效]。
+<b>参数：</b>
+无。
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>
+    <dd>
+<pre>
+<b id="link_last" name="link_last">last</b>
+last() 获取最后一个子节点[对一个对象有效]。
+<b>参数：</b>
+无。
+<b>返回：</b>
+Jsee对象。 
+</pre>        
+    </dd>
+
+    <dd>
+<pre>
+<b id="link_child" name="link_child">children</b>
+children() 获取所有子节点不包括孙节点[对一个对象有效]。
+<b>参数：</b>
+无。
+<b>返回：</b>
+Jsee对象。 
+</pre>       
+    </dd>
+    <dd>
+<pre>
+<b id="childs" name="childs">find</b>
+find() 获取所有子节点包括孙节点[对一个对象有效]。
+<b>参数：</b>
+无。
+<b>返回：</b>
+Jsee对象。 
+</pre>     
+    </dd>
+    <dd>
+<pre>
+<b id="link_left" name="link_left">coord</b>
+coord() 获取元素在当前窗口中坐标[对一个对象有效]。
+<b>参数：</b>
+无。
+<b>返回：</b>
+坐标对象。
+例：$("xid").coord().x;//x轴坐标
+$("xid").coord().y;//y轴坐标 
+</pre>      
+    </dd>
+    <dd>
+<pre>
+<b id="link_getAttr" name="link_getAttr">getAttr</b>
+getAttr(arg) 获取dom对象属性获取[对一个对象有效]。
+<b>参数：</b>
+arg - 属性名。
+<b>返回：</b>
+Jsee对象。 
+</pre>        
+    </dd>
+    <dd>
+<pre>
+<b id="link_setAttr" name="link_setAttr">setAttr</b>
+setAttr(params) dom对象属性设置[对一组对象有效]。
+<b>参数：</b>
+params - {key:value} key属性名 value属性值。
+<b>返回：</b>
+Jsee对象。 
+</pre>        
+    </dd>
+    <dd>
+<pre>
+<b id="link_removeAttr" name="link_removeAttr">removeAttr</b>
+removeAttr(value) 移除元素属性。
+<b>参数：</b>
+value - 属性名。
+<b>返回：</b>
+Jsee对象。 
+</pre>        
+    </dd>   
+    <dd>
+<pre>
+<b id="link_getCursorPosition" name="link_getCursorPosition">getCursor</b>
+getCursor() 获取光标位置。input 或 textarea 对象[对一个对象有效]
+<b>参数：</b>
+无。
+<b>返回：</b>
+int。 
+</pre>       
+    </dd>
+    <dd>
+<pre>
+<b id="link_setCursorPosition" name="link_setCursorPosition">setCursor</b>
+setCursor(pos) 设置光标位置input 或 textarea 对象[对一个对象有效]。
+<b>参数：</b>
+pos - 光标位置。
+<b>返回：</b>
+Jsee对象。 
+</pre>     
+    </dd>
+    <dd>
+<pre>
+<b id="link_bind" name="link_bind">bind</b>
+bind(params) 事件绑定[对一组对象有效]params {key:value} key事件类型 value回调方法。
+<b>参数：</b>
+params - {key:value} key事件类型 value回调方法。
+<b>返回：</b>
+无。 
+</pre>      
+    </dd>
+    <dd>
+<pre>
+<b id="link_live" name="link_live">live</b>
+live(params) 事件委派[对一组对象有效]params {key:value} key事件类型 value回调方法。
+<b>参数：</b>
+params - {key:value} key事件类型 value回调方法。
+<b>返回：</b>
+无。 
+</pre>      
+    </dd>
+    <dd>
+<pre>
+<b id="link_search" name="link_search">search</b>
+search(key,callback) 关键字搜索[可以对一组对象进行搜索]key关键字 callback 回调方法。
+<b>参数：</b>
+key - 关键字。
+callback - 回调方法 可以处理搜索到内容的显示样式,缺省时搜索到的内容样式为红色加粗
+<b>返回：</b>
+无。 
+</pre>        
+    </dd>    
+    
+    <dd>
+<pre>
+<b id="link_clone" name="link_clone">clone</b>
+clone(f) 对象克隆[只能对一个对象进行克隆] f 为true时 克隆节点以及节点下面的子内容 f 为false时或缺省时 克隆当前节点
+<b>参数：</b>
+f - 为true时 克隆节点以及节点下面的子内容 ; 为false时或缺省时 克隆当前节点。
+<b>返回：</b>
+Jsee对象。 
+</pre>       
+    </dd>
+    <dd>
+<pre>
+<b id="link_append" name="link_append">append</b>
+append(arg) 将指定对象arg变成当前对象的最后一个子节点[可以对多个对象进行设置]。
+<b>参数：</b>
+arg - 要添加的对象。
+<b>返回：</b>
+Jsee对象。 
+</pre>     
+    </dd>
+    <dd>
+<pre>
+<b id="link_appendTo" name="link_appendTo">appendTo</b>
+appendTo(arg) 将当前对象添加到指定对象的最后一个子节点[对一组对象有效]。
+<b>参数：</b>
+arg - 添加到指定对象。
+<b>返回：</b>
+Jsee对象。 
+</pre>     
+    </dd>
+    <dd>
+<pre>
+<b id="link_fadeIn" name="link_fadeIn">fadeIn</b>
+fadeIn(param,speed,callback) 动画淡入 param淡入到的值 缺省值1, speed 速度值 缺省值500,callback 回调方法,callback 中this为当前对象。
+<b>参数：</b>
+param - 淡入到的值 缺省值1, 
+speed - 速度值 缺省值500,
+callback - 回调方法,callback 中this为当前对象。
+[注]参数可以只有一个回调方法
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>
+    <dd>
+<pre>
+<b id="link_fadeOut" name="link_fadeOut">fadeOut</b>
+fadeOut(param,speed,callback) 动画淡出 param淡出到的值 缺省值1, speed 速度值 缺省值500,callback 回调方法,callback 中this为当前对象。
+<b>参数：</b>
+param - 淡出到的值 缺省值1, 
+speed - 速度值 缺省值500,
+callback - 回调方法,callback 中this为当前对象。
+[注]参数可以只有一个回调方法
+<b>返回：</b>
+Jsee对象。 
+</pre>        
+    </dd>       
+
+    <dd>
+<pre>
+<b id="link_fadeToggle" name="link_fadeToggle">fadeToggle</b>
+fadeToggle(speed,callback) 淡入淡出切换 speed 速度 callback 回调方法,callback 中this指向当前动画对象
+<b>参数：</b>
+speed - 速度值 缺省值500,
+callback - 回调方法,callback 中this为当前对象。
+[注]参数可以只有一个回调方法。
+<b>返回：</b>
+Jsee对象。 
+</pre>       
+    </dd>
+    <dd>
+<pre>
+<b id="link_slideDown" name="link_slideDown">slideDown</b>
+slideDown(speed,callback) 动画伸展 speed 速度 callback 回调方法,callback 中this指向当前动画对象。
+<b>参数：</b>
+speed - 速度值 缺省值500,
+callback - 回调方法,callback 中this为当前对象。
+[注]参数可以只有一个回调方法
+<b>返回：</b>
+Jsee对象。 
+</pre>     
+    </dd>
+    <dd>
+<pre>
+<b id="link_slideUp" name="link_slideUp">slideUp</b>
+slideUp(speed,callback) 动画收缩 speed 速度 callback 回调方法,callback 中this指向当前动画对象。
+<b>参数：</b> 
+speed - 速度值 缺省值500,
+callback - 回调方法,callback 中this为当前对象。
+[注]参数可以只有一个回调方法。
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>
+    <dd>
+<pre>
+<b id="link_slideToggle" name="link_slideToggle">slideToggle</b>
+slideToggle(speed,callback) 伸展收缩切换 speed 速度,callback 回调方法,callback 中this指向当前动画对象。
+<b>参数：</b>
+speed - 速度值 缺省值500,
+callback - 回调方法,callback 中this为当前对象。
+[注]参数可以只有一个回调方法
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>
+    <dd>
+<pre>
+<b id="link_animate" name="link_animate">animate</b>
+animate(param,speed,callback) 自定义动画 speed 速度,callback 回调方法,callback 中this指向当前动画对象。
+<b>参数：</b>
+param - 动画属性对象
+speed - 速度值 缺省值500,
+callback - 回调方法,callback 中this为当前对象。
+[注]参数可以为[callback]或[param,callback]或[speed,callback]或[param,speed]或[speed]
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>    
+    <dd>
+<pre>
+<b id="link_setHtml" name="link_setHtml">setHtml</b>
+setHtml(value) 设置对象的html内容。
+<b>参数：</b>
+value - html字符串
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>  
+    <dd >
+<pre>
+<b id="link_getHtml" name="link_getHtml">getHtml</b>
+getHtml() 获取对象的html内容。
+<b>参数：</b>
+无
+<b>返回：</b>
+html字符串。 
+</pre>      
+    </dd> 
+    <dd >
+<pre>
+<b id="link_getValue" name="link_getValue">getValue</b>
+getValue() 获取input对象的value内容  [对一个对象有效]对象只能为[input/textarea]。
+<b>参数：</b>
+无
+<b>返回：</b>
+字符串。 
+</pre>      
+    </dd>     
+    <dd >
+<pre>
+<b id="link_setValue" name="link_setValue">setValue</b>
+setValue() 设置input对象的value内容 对象只能为[input/textarea]。
+<b>参数：</b>
+无
+<b>返回：</b>
+字符串。 
+</pre>      
+    </dd>        
+    <dd>
+<pre>
+<b id="link_hasClass" name="link_hasClass">hasClass</b>
+hasClass(name) 校验一个对象是否包含指定类名。
+<b>参数：</b>
+name - 样式类名
+<b>返回：</b>
+boolean。 
+</pre>      
+    </dd>  
+    <dd >
+<pre>
+<b id="link_removeClass" name="link_removeClass">removeClass</b>
+removeClass(name) 移除指定类名。可以对一组对象进行操作
+<b>参数：</b>
+name - 样式类名
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd> 
+    <dd >
+<pre>
+<b id="link_addClass" name="link_addClass">addClass</b>
+addClass(name) 添加指定类名。可以对一组对象进行操作
+<b>参数：</b>
+name - 样式类名
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd> 
+    <dd>
+<pre>
+<b id="link_masker" name="link_masker">masker</b>
+masker(v) 参数为0时移除遮罩,不等于0时设置遮罩内容,
+<b>参数：</b>
+v - 参数为0时移除遮罩,不等于0时设置遮罩内容
+例：显示: $("#idName").masker("遮罩内容"); 隐藏: $("#idName").masker(0);
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd> 
+    
+    <dd>
+<pre>
+<b id="link_end" name="link_end">end</b>
+end() 破坏性操作后返回上一级对象
+<b>参数：</b>
+无.
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>     
+    <dd>
+<pre>
+<b id="link_remove" name="link_remove">remove</b>
+remove() 移出对象[对一组对象有效]
+<b>参数：</b>
+无.
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>       
+    
+    <dd>
+<pre>
+<b id="link_empty" name="link_empty">empty</b>
+empty() 清空对象内容[对一组对象有效]
+<b>参数：</b>
+无.
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>     
+    <dd>
+<pre>
+<b id="link_insertBefore" name="link_insertBefore">insertBefore</b>
+insertBefore(o) 在对象前面插入[对一组对象有效]
+<b>参数：</b>
+o - 选择器参数.
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>     
+    <dd>
+<pre>
+<b id="link_insertAfter" name="link_insertAfter">insertAfter</b>
+insertAfter(o) 在对象前面插入[对一组对象有效]
+<b>参数：</b>
+o - 选择器参数.
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>     
+    <dd>
+<pre>
+<b id="link_insertAfter" name="link_insertAfter">replaceAll</b>
+replaceAll(o) 替换对象[对一组对象有效]
+<b>参数：</b>
+o - 选择器参数.
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>     
+    <dd>
+<pre>
+<b id="link_parent" name="link_parent">parent</b>
+parent(o) 获取对象父节点[对一个对象有效] 破坏性操作
+<b>参数：</b>
+o - 选择器参数.
+<b>返回：</b>
+Jsee对象。 
+</pre>      
+    </dd>     
+    <dd>
+<pre>
+<b id="link_each" name="link_each">each</b>
+each(callback) 循环. json/array
+<b>参数：</b>
+callback - 回调方法.
+<b>返回：</b>
+Jsee对象。 
+例：
+$("div").each(function(i,v){
+//this表示当前数组或json对象
+	//如果是数组
+	//i=当前循环项
+    //v=当前对象
+    //如果是JSON
+    //i=key值
+    //v=value值
+});
+</pre>      
+    </dd>     
+    <dd>
+<pre>
+<b id="link_onDrag" name="link_onDrag">onDrag</b>
+onDrag(callback) 拖动
+<b>参数：</b>
+callback - 回调方法.
+<b>返回：</b>
+Jsee对象。 
+<b>说明：</b>
+//+--------------------------------------------------------------------------------
+//| 拖动
+//+--------------------------------------------------------------------------------	
+//| callback可以有两个参数 第一个参数为left 第二个参数为top
+//| left 指当前移动对象相对指定父节点内左侧距离 . top同理
+//+--------------------------------------------------------------------------------	
+/**********************************************************************************
+//被移动的对象自动设置为绝对定位
+//指定父节点为相对定位时,它会在父节点中移动
+$("span").onDrag(function(left,top){
+	//this.dragEnd() //结束移动事件
+	if(top!=0){
+		this.style.top =0;
+	}
+	if(left&lt;0){
+		this.style.left =0;
+	}
+	var rightEnd = parseFloat($(this).parent().getCss("width"))-parseFloat(this.style.width);
+	if(left>rightEnd){
+		this.style.left =rightEnd+"px";
+	}
+});
+//以下为html内容
+&lt;div style="position:relative; border:1px solid red; height:10px; width:1000px; overflow:hidden">
+	&lt;span style="width:5px; position:absolute; left:0px; top:0px; height:10px; overflow:hidden; background:green; cursor:pointer;">&nbsp;&lt;/span>
+&lt;/div>
+**********************************************************************************/
+</pre>      
+    </dd>  
+    
+</dl>
+
+
+
+</div>
+<div class="top-line"></div>
+<div class="area footer">
+	<p>辽ICP备13008130号　Copyright © 20013-2016,  js-ee.cn, All Rights Reserved  </p>
+    <div class="baiducount">
+		<script type="text/javascript">
+        	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+       	 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F97686d405b084abb83a469163765e8cc' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* 
+JSEE CSS Document 
+Author HOUZHENYU
+*/
+.welcome-jsee{
+	width:515px;
+	height:105px;
+	margin:90px 0 0 0;
+	overflow:hidden;
+	clear:both;
+	background:url(../images/index/welcome.jpg) left top no-repeat;
+}
+.menu-box div{
+	line-height:150px;
+	color:#FFF;
+	font-size:36px;
+	text-align:center;
+	font-family:"微软雅黑", "黑体", "新宋体", "宋体", "楷体", Arial;
+}
+.menu-box{
+	clear:both;
+	padding:30px 0 10px 165px;
+	width:820px;
+	height:auto;
+	overflow:hidden;
+}
+.menu-box1,.menu-box2,.menu-box3,.menu-box4{
+	width:310px;
+	height:150px;
+	margin:0 10px 10px 0;
+	float:left;
+	cursor:pointer;
+}
+.menu-box5,.menu-box6{
+	width:150px;
+	height:150px;
+	margin:0 10px 10px 0;
+	float:left;
+	cursor:pointer;
+}
+.menu-box1{
+	background:#5f1252;
+}
+.menu-box2{
+	margin-right:50px;
+	background:#d28014;
+}
+.menu-box3{
+	background:#044a8b;
+}
+.menu-box4{
+	background:#7a9a29;
+}
+.menu-box5{
+	background:#46a4aa;
+}
+.menu-box6{
+	background:#044a8b;
+}

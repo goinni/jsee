@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSEE Timer对象</title>
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/document_index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jsee.src.min.1.5.2.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+</head>
+
+<body>
+<div class="area">
+    <div class="logo"></div>
+    <ul class="nav">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="document_Element.html">JSEE文档</a></li>
+        <li><a href="demo/menu_Map.html">JSEE案例</a></li>
+        <li><a href="menu_aboutme.html">关于我们</a></li>
+        <li><a href="menu_download.html">下载</a></li>
+        <li><a href="menu_book.html">J-SVG</a></li>
+    </ul>
+</div>
+<div class="top-line"></div>
+<div class="area">
+	<div class="entity-box">
+    	<div class="entity-o"><a href="document_Element.html#link_Element">Jsee</a></div>
+    	<div class="entity-o"><a href="document_Map.html#link_map">Map</a></div>
+        <div class="entity-o"><a href="document_Thread.html#link_thread">Thread</a></div>
+        <div class="currNav"><a href="document_Timer.html#link_timer">Timer</a></div>
+        <div class="entity-o"><a href="document_List.html#link_list">Array</a></div>
+        <div class="entity-o"><a href="document_Event.html#link_event">Event</a></div>
+        
+    	<div class="entity-o"><a href="document_String.html#link_string">String</a></div>
+        <div class="entity-o"><a href="document_DateTool.html#link_dateTool">Date</a></div>
+    	<div class="entity-o"><a href="document_PageContext.html#link_PageContext">PageContext</a></div>
+        <div class="entity-o"><a href="document_Cookie.html#link_Cookie">Cookie</a></div>
+    </div>
+    <div class="top-line"></div>
+</div>
+<div class="area b-line">
+	<div class="curr-tip">当前对象为：</div>
+    <div class="curr-o" id="link_timer" name="link_timer">Timer</div>
+</div>
+<div class="area countant-bg">
+<dl>
+	<dt class="m-title">对象说明:</dt>
+	<dd class="m-title">
+    	Timer是一个简单的计时器，可以方便的获取执行任务的时间差，可以控制计时开始与停止
+    </dd>
+</dl>
+<dl id="fn_menu">
+	<dt class="m-title">方法摘要:</dt>
+	<dd class="m-title"><h1>返回值</h1><h2>方法名</h2><h3>方法说明</h3></dd>
+    <dd><h1>无</h1><h2><a href="#link_Timer">Timer(fn,time)</a></h2><h3>Timer构造器，fn回调方法 fn(t) t为时间差，time计时频率</h3></dd>
+    <dd><h1>无</h1><h2><a href="#link_start">start()</a></h2><h3>起动Timer计时器。</h3></dd>
+    <dd><h1>无</h1><h2><a href="#link_stop">stop()</a></h2><h3>停止Timer计时器</h3></dd>
+</dl>
+<dl>
+	<dt>方法详细信息:</dt>
+    <dd>
+<pre>
+<b id="link_Timer" name="link_Timer">Timer</b>
+Timer(fn,time) 构造器
+<b>参数：</b>
+fn - 回调方法。[注]fn中的this指向当前timer对象; fn中可以接受一个参数 即：程序执行的时间差,即开始 至 现在 单位毫秒
+time - 计时频率 [单位毫秒]
+如：
+new Timer(
+	function(time){
+    	//time可以省略
+		if(time >= 6000) {
+        	//this指向当前timer对象
+			this.stop();
+		}
+		document.getELementById("div_id").innerHTML= "程序执行了： "+time+" 毫秒";
+	},100).start();
+<b>返回：</b>
+无。 
+</pre>    
+    </dd>
+	<dd>
+<pre>
+<b id="link_start" name="link_start">start</b>
+start()起动Timer计时器
+<b>参数：</b>
+无 
+<b>返回：</b>
+无。 
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_stop" name="link_stop">stop</b>
+stop()停止Timer计时器
+<b>参数：</b>
+无
+<b>返回：</b>
+无。 
+</pre>
+    </dd>
+</dl>
+
+</div>
+<div class="top-line"></div>
+<div class="area footer">
+	<p>辽ICP备13008130号　Copyright © 20013-2016,  js-ee.cn, All Rights Reserved  </p>
+    <div class="baiducount">
+		<script type="text/javascript">
+        	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+       	 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F97686d405b084abb83a469163765e8cc' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+
+</body>
+</html>

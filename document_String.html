@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSEE String对象</title>
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/document_index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jsee.src.min.1.5.2.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+</head>
+
+<body>
+<div class="area">
+    <div class="logo"></div>
+    <ul class="nav">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="document_Element.html">JSEE文档</a></li>
+        <li><a href="demo/menu_Map.html">JSEE案例</a></li>
+        <li><a href="menu_aboutme.html">关于我们</a></li>
+        <li><a href="menu_download.html">下载</a></li>
+        <li><a href="menu_book.html">J-SVG</a></li>
+    </ul>
+</div>
+<div class="top-line"></div>
+<div class="area">
+	<div class="entity-box">
+    	<div class="entity-o"><a href="document_Element.html#link_Element">Jsee</a></div>
+    	<div class="entity-o"><a href="document_Map.html#link_map">Map</a></div>
+        <div class="entity-o"><a href="document_Thread.html#link_thread">Thread</a></div>
+        <div class="entity-o"><a href="document_Timer.html#link_timer">Timer</a></div>
+        <div class="entity-o"><a href="document_List.html#link_list">Array</a></div>
+        <div class="entity-o"><a href="document_Event.html#link_event">Event</a></div>
+        
+    	<div class="currNav"><a href="document_String.html#link_string">String</a></div>
+        <div class="entity-o"><a href="document_DateTool.html#link_dateTool">Date</a></div>
+    	<div class="entity-o"><a href="document_PageContext.html#link_PageContext">PageContext</a></div>
+        <div class="entity-o"><a href="document_Cookie.html#link_Cookie">Cookie</a></div>
+    </div>
+    <div class="top-line"></div>
+</div>
+<div class="area b-line">
+	<div class="curr-tip">当前对象为：</div>
+    <div class="curr-o" id="link_string" name="link_string">String</div>
+</div>
+<div class="area countant-bg">
+<dl>
+	<dt class="m-title">对象说明:</dt>
+	<dd class="m-title">
+    	jsee对string对象进行了强大的扩展，新增很多常用字的方法，任何字符串均可以直接调用
+    </dd>
+</dl>
+<dl id="fn_menu">
+	<dt class="m-title">方法摘要:</dt>
+	<dd class="m-title"><h1>返回值</h1><h2>方法名</h2><h3>方法说明</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_trims">trims()</a></h2><h3>删除所有空格</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_trim">trim()</a></h2><h3>删除两边空格</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_ltrim">ltrim()</a></h2><h3>删除左边空格</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_rtrim">rtrim()</a></h2><h3>删除右边空格</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_subString">subString(start,end)</a></h2><h3>截取字符串函数, start 开始位置, end 结束位置,参数为负数时表示截取字符串到从后面数第几个</h3></dd>
+    <dd><h1>boolean</h1><h2><a href="#link_isBelong">isBelong(character)</a></h2><h3>检查当前字符是否在给定的字符串内，character 为给定的字符,缺省值为"A~Za~z0~9"</h3></dd>
+    <dd><h1>boolean</h1><h2><a href="#link_isEmail">isEmail()</a></h2><h3>验证邮件</h3></dd>
+    <dd><h1>DOM节点对象</h1><h2><a href="#link_toDom">toDom()</a></h2><h3>将html字符串代码转换成DOM对象</h3></dd>
+    <dd><h1>boolean</h1><h2><a href="#link_isInteger">isInteger()</a></h2><h3>验证字符串是否整数</h3></dd>
+    <dd><h1>boolean</h1><h2><a href="#link_isNumber">isNumber()</a></h2><h3>验证字符串是否数</h3></dd>
+    <dd><h1>boolean</h1><h2><a href="#link_equal">equal(arg)</a></h2><h3>验证两个字符串是否相等</h3></dd>
+    <dd><h1>boolean</h1><h2><a href="#link_isChinese">isChinese()</a></h2><h3>验证字符串是否包含中文</h3></dd>
+    <dd><h1>Date</h1><h2><a href="#link_toDate">toDate()</a></h2><h3>将指定格式(yyyy-MM-dd hh:mm:ss)的日期字符串转为日期类型</h3></dd>
+    <dd><h1>number</h1><h2><a href="#link_byteSize">byteSize()</a></h2><h3>获取字符串的字节长度 (英文、数字、符号均为一个字节,汉字为两个)</h3></dd>
+    <dd><h1>Array</h1><h2><a href="#link_cut">cut(len,f,p)</a></h2><h3>分隔字符串</h3></dd>
+    
+    <dd><h1>boolean</h1><h2><a href="#link_isLeapYear">isLeapYear()</a></h2><h3>判断年字符串是否为闰年 如: '2016'.isLeapYear() = true;</h3></dd>
+    <dd><h1>boolean</h1><h2><a href="#link_check">check(d)</a></h2><h3>求两个[指定格式](yyyy-MM-dd hh:mm:ss)日期字符大小,返回值为true,false,eq</h3></dd>
+    <dd><h1>毫秒数</h1><h2><a href="#link_distance">distance(d)</a></h2><h3>求两个[指定格式]日期字符串的日期相隔长度，返回毫秒数</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_replaceAll">replaceAll(a,b)</a></h2><h3>查找字符串中a的值用b来替换</h3></dd>
+</dl>
+<dl>
+	<dt>方法详细信息:</dt>
+    <dd>
+<pre>
+<b id="link_trims" name="link_trims">trims</b>
+trims() 删除所有空格
+<b>参数：</b>
+无
+<b>返回：</b>
+string。 
+</pre>    
+    </dd>
+	<dd>
+<pre>
+<b id="link_trim" name="link_trim">trim</b>
+trim()删除两边空格。
+<b>参数：</b>
+无
+<b>返回：</b>
+string。 
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_ltrim" name="link_ltrim">ltrim</b>
+ltrim() 删除左边空格。
+<b>参数：</b>
+无
+<b>返回：</b>
+string。 
+</pre>
+    </dd>
+	<dd>
+<pre>
+<b id="link_rtrim" name="link_rtrim">rtrim</b>
+rtrim() 删除右边空格。
+<b>参数：</b>
+无
+<b>返回：</b>
+string。 
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_subString" name="link_subString">subString</b>
+subString(start,end) 截取字符串函数。
+<b>参数：</b>
+start - 开始位置
+end - 结束位置
+<b>返回：</b>
+string。
+<b>说明</b>
+参数为负数时表示截取字符串到从后面数第几个，参数可以为一个也可为两个
+比如："123456".subString(-2) 结果为1234
+"123456".subString(1,-2) 结果为234
+</pre>
+    </dd>
+	<dd>
+<pre>
+<b id="link_isBelong" name="link_isBelong">isBelong</b>
+isBelong(character)检查当前字符是否在给定的字符串内。
+<b>参数：</b>
+character - 为给定的字符,缺省值为"A~Za~z0~9"。
+<b>返回：</b>
+boolean。 
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_isEmail" name="link_isEmail">isEmail</b>
+isEmail() 验证邮件。
+<b>参数：</b>
+无。
+<b>返回：</b>
+boolean。 
+</pre>
+    </dd>
+	<dd>
+<pre>
+<b id="link_toDom" name="link_toDom">toDom</b>
+toDom()将html字符串代码转换成DOM对象。
+<b>参数：</b>
+无。
+<b>返回：</b>
+DOM对象。 
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_isInteger" name="link_isInteger">isInteger</b>
+isInteger() 验证字符串是否整数。
+<b>参数：</b>
+无。
+<b>返回：</b>
+boolean。 
+</pre>
+    </dd>
+	<dd>
+<pre>
+<b id="link_isNumber" name="link_isNumber">isNumber</b>
+isNumber()验证字符串是否数。
+<b>参数：</b>
+无。
+<b>返回：</b>
+boolean。 
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_equal" name="link_equal">equal</b>
+equal(arg) 验证两个字符串是否相等。
+<b>参数：</b>
+arg - 比较的字符串。
+<b>返回：</b>
+boolean。 
+</pre>
+    </dd>
+	<dd>
+<pre>
+<b id="link_isChinese" name="link_isChinese">isChinese</b>
+isChinese()验证字符串是否包含中文。
+<b>参数：</b>
+无。
+<b>返回：</b>
+boolean。 
+</pre>
+    </dd>
+	<dd>
+<pre>
+<b id="link_toDate" name="link_toDate">toDate</b>
+toDate()将指定格式(yyyy-MM-dd hh:mm:ss)的日期字符串转为日期类型。
+<b>参数：</b>
+无。
+<b>可以转换的时间格式为以下几种类型</b>
+yyyy-MM
+yyyy-MM-dd
+yyyy-MM-dd hh
+yyyy-MM-dd hh:mm 
+yyyy-MM-dd hh:mm:ss
+<b>返回：</b>
+Date。 
+</pre>
+    </dd>
+	<dd>
+<pre>
+<b id="link_byteSize" name="link_byteSize">byteSize</b>
+byteSize()获取字符串的字节长度。
+<b>参数：</b>
+无。
+<b>返回：</b>
+number。 
+例如：
+"1sS#符".byteSize(); 结果为6
+</pre>
+    </dd>
+	<dd>
+<pre>
+<b id="link_cut" name="link_cut">cut</b>
+cut(len,f,p)分隔字符串。
+<b>参数：</b>
+len - 分隔长度
+f - 1按字节分隔；0按字符串分隔。缺省值为0
+p - 匹配分隔模式
+<b>返回：</b>
+数组。 
+* 功能一: 按字符串长度分隔
+* 功能二: 按字符串字节长度分隔
+* 功能三: 可以指定分隔模式
+</pre>
+    </dd>
+   
+ 	<dd>
+<pre>
+<b id="link_isLeapYear" name="link_isLeapYear">isLeapYear</b>
+isLeapYear()判断年字符串是否为闰年。
+<b>参数：</b>
+无。
+<b>返回：</b>
+ 如: '2016'.isLeapYear() = true;
+</pre>
+    </dd>
+   
+ 	<dd>
+<pre>
+<b id="link_check" name="link_check">check</b>
+check(d);求两个[指定格式](yyyy-MM-dd hh:mm:ss)日期字符大小,返回值为true,false,eq。
+<b>参数：</b>
+d-指定日期格式字符串。
+<b>返回：</b>
+ 如: '2012-05-03'.check('2012-02-01') 结果为： true;
+ '2012-05-03'.check('2012-06-01') 结果为： false;
+ '2012-05-03'.check('2012-05-03') 结果为： eq;
+</pre>
+    </dd>
+   
+ 	<dd>
+<pre>
+<b id="link_distance" name="link_distance">distance</b>
+distance(d);求两个[指定格式]日期字符串的日期相隔长度，返回毫秒数。
+<b>参数：</b>
+d-指定日期格式字符串。
+<b>返回：</b>
+ 如: '2012-05-03'.distance('2012-05-01')/(1*24*60*60*1000) 结果为2天(因为获取相隔 毫秒数 后又转成 天)
+</pre>
+    </dd>
+
+ 	<dd>
+<pre>
+<b id="link_replaceAll" name="link_replaceAll">replaceAll</b>
+replaceAll(a,b);查找字符串中a的值用b来替换。
+<b>参数：</b>
+a-要查找替换的字符串。
+b-用来取代a。
+<b>返回：</b>
+如：'我是沈阳人,我爱沈阳!'.replaceAll("沈阳","北京"); 结果为：我是北京人，我爱北京
+</pre>
+    </dd>  
+    
+</dl>
+
+</div>
+<div class="top-line"></div>
+<div class="area footer">
+	<p>辽ICP备13008130号　Copyright © 20013-2016,  js-ee.cn, All Rights Reserved  </p>
+    <div class="baiducount">
+		<script type="text/javascript">
+        	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+       	 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F97686d405b084abb83a469163765e8cc' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+
+</body>
+</html>

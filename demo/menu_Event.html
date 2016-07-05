@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSEE案例-Event</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css" />
+<link href="../css/document_index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jsee.src.min.1.5.2.js"></script>
+<style type="text/css">
+.democontant font{ font-family:"新宋体", "宋体", "黑体";}
+.democontant pre{ 
+	display:block;
+	margin:10px;
+	padding:10px;
+	border:1px dashed #999;
+	font-family:Verdana, Geneva, sans-serif; 
+	font-size:12px;
+	line-height:22px;
+}
+.democontant b{ color:#e69e38;}
+</style>
+</head>
+
+<body>
+<div class="area">
+    <div class="logo"></div>
+    <ul class="nav">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../document_Element.html">JSEE文档</a></li>
+        <li><a href="menu_Map.html">JSEE案例</a></li>
+        <li><a href="../menu_aboutme.html">关于我们</a></li>
+        <li><a href="../menu_download.html">下载</a></li>
+        <li><a href="../menu_book.html">J-SVG</a></li>
+    </ul>
+</div>
+<div class="top-line"></div>
+
+<div class="area b-line">
+	<div class="curr-tip">当前位置：</div>
+    <div class="curr-o">JSEE案例</div>
+</div>
+<div class="area countant-bg">
+	<div class="entity-box" style="width:192px; float:left;">
+    	<div class="entity-o"><a href="menu_Map.html">Map</a></div>
+        <div class="entity-o"><a href="menu_Thread.html">Thread</a></div>
+        <div class="entity-o"><a href="menu_Timer.html">Timer</a></div>
+        <div class="entity-o e-oselected"><a href="menu_Event.html">Event</a></div> 
+    	<div class="entity-o"><a href="menu_String.html">String</a></div>
+    </div>
+
+	<div class="democontant">
+
+<pre>
+<b>part 1.兼容获取winodw.event对象</b>      
+	$(document).bind({		
+		onmousemove:function(){
+        	<font>//获取事件源</font>
+        	var wEvent = Event.fixEvent();
+			<font>//获取鼠标坐标</font>
+			$("#tipbox").innerHTML = wEvent.clientX + "," + wEvent.clientY	
+		}
+	});
+<script type="text/javascript">
+$(function(){
+	$(document).bind({		
+		onmousemove:function(){
+			//获取事件源
+			var wEvent = Event.fixEvent();
+			//获取鼠标坐标
+			$("#tipbox").setHtml( wEvent.clientX + "," + wEvent.clientY	);
+		}
+	});
+});
+</script>
+<b>移动鼠标观察下面数据</b>
+鼠标当前页面坐标:<font id="tipbox"></font>
+
+</pre>
+<pre>
+<b>part 2.获取键盘码 与 事件终止</b>  
+<font>//简化书写</font>
+var $ = Element;
+$(function(){
+	//页面加载完成后执行以下内容
+	$("#tempInput1").bind({
+		onkeydown:function(){
+			//获取键盘码
+			var keycode = Event.keyCode();
+			//只允许输入0~9数字
+			if(keycode>=48 && keycode <=57){
+				//提示按下的键盘码
+				alert(Event.keyCode());
+			}else{
+				//终止事件响应
+				Event.stop();
+			}
+		}
+	});
+});
+<b>下面输入框只能输入数字</b>
+请输入：<input id="tempInput1" type="text" />
+<script type="text/javascript">
+$(function(){
+	//页面加载完成后执行以下内容
+	$("#tempInput1").bind({
+		onkeydown:function(){
+			//获取键盘码
+			var keycode = Event.keyCode();
+			//只允许输入0~9数字
+			if(keycode>=48 && keycode <=57){
+				//提示按下的键盘码
+				alert(Event.keyCode());
+			}else{
+				//终止事件响应
+				Event.stop();
+			}
+		}
+	});
+});
+</script>
+</pre>
+
+    </div>
+
+</div>
+<div class="top-line"></div>
+<div class="area footer">
+	<p>辽ICP备13008130号　Copyright © 20013-2016,  js-ee.cn, All Rights Reserved  </p>
+    <div class="baiducount">
+		<script type="text/javascript">
+        	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+       	 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F97686d405b084abb83a469163765e8cc' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+
+</body>
+</html>

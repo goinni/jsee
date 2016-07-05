@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* 
+JSEE CSS Document 
+Author HOUZHENYU
+*/
+* {
+ 	margin:0px; padding:0px;
+ 	font-size:12px;
+}
+img{
+	border:none;	
+}
+ul,li,ol,li,dl,dt,dd{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	outline:none;
+	outline-style:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+body{
+	background:url(../images/other/bg.jpg) left top repeat;
+}
+.area{
+	width:1002px;
+	height:auto;
+	overflow:hidden;
+	margin:0 auto;
+	clear:both;
+}
+
+.top-line{
+	font-size:0px;
+	overflow:hidden;
+	width:100%;
+	clear:both;
+	height:2px;
+ 	background:url(../images/content/line.jpg) left top repeat-x;
+}
+.footer{
+	text-align:center;
+	position:relative;
+}
+.footer p{
+	text-align:center;
+	color:#FFF;
+	line-height:40px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.footer .baiducount{
+	position:absolute;
+	right:220px;
+	top:10px;
+	width:80px;
+	height:30px;
+	line-height:22px;
+}
+.footer .baiducount *{color:#FFF;}

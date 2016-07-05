@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSEE Event对象</title>
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/document_index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jsee.src.min.1.5.2.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+</head>
+
+<body>
+<div class="area">
+    <div class="logo"></div>
+    <ul class="nav">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="document_Element.html">JSEE文档</a></li>
+        <li><a href="demo/menu_Map.html">JSEE案例</a></li>
+        <li><a href="menu_aboutme.html">关于我们</a></li>
+        <li><a href="menu_download.html">下载</a></li>
+        <li><a href="menu_book.html">J-SVG</a></li>
+    </ul>
+</div>
+<div class="top-line"></div>
+<div class="area">
+	<div class="entity-box">
+    	<div class="entity-o"><a href="document_Element.html#link_Element">Jsee</a></div>
+    	<div class="entity-o"><a href="document_Map.html#link_map">Map</a></div>
+        <div class="entity-o"><a href="document_Thread.html#link_thread">Thread</a></div>
+        <div class="entity-o"><a href="document_Timer.html#link_timer">Timer</a></div>
+        <div class="entity-o"><a href="document_List.html#link_list">Array</a></div>
+        <div class="currNav"><a href="document_Event.html#link_event">Event</a></div>
+        
+    	<div class="entity-o"><a href="document_String.html#link_string">String</a></div>
+        <div class="entity-o"><a href="document_DateTool.html#link_dateTool">Date</a></div>
+    	<div class="entity-o"><a href="document_PageContext.html#link_PageContext">PageContext</a></div>
+        <div class="entity-o"><a href="document_Cookie.html#link_Cookie">Cookie</a></div>
+    </div>
+    <div class="top-line"></div>
+</div>
+<div class="area b-line">
+	<div class="curr-tip">当前对象为：</div>
+    <div class="curr-o" id="link_event" name="link_event">Event </div>
+</div>
+<div class="area countant-bg">
+<dl>
+	<dt class="m-title">对象说明:</dt>
+	<dd class="m-title">Event对象可以理解为静态对象，我们可以直接获取其内部方法。<br />
+	如：Event.keyCode();或Event.fixEvent();<br />
+	<b>[注]在使用此对象时一定要在触发事件方法体内使用</b></dd>
+</dl>
+<dl id="fn_menu">
+	<dt class="m-title">方法摘要:</dt>
+	<dd class="m-title"><h1>返回值</h1><h2>方法名</h2><h3>方法说明</h3></dd>
+    <dd><h1>object</h1><h2><a href="#link_windowEvent">fixEvent()</a></h2><h3>获取事件源</h3></dd>
+    <dd><h1>int</h1><h2><a href="#link_keyCode">keyCode()</a></h2><h3>获取 keycode 键盘码</h3></dd>
+    <dd><h1>无</h1><h2><a href="#link_stop">stop()</a></h2><h3>停止事件</h3></dd>
+    <dd><h1>object</h1><h2><a href="#link_element">element()</a></h2><h3>获取触发事件的对象</h3></dd>
+</dl>
+<dl>
+	<dt>方法详细信息:</dt>
+	<dd>
+<pre>
+<b id="link_windowEvent" name="link_windowEvent">fixEvent</b>
+fixEvent() 获取事件源（相当window.event）。
+<b>参数：</b>
+无。
+<b>返回：</b>
+事件源。 
+例：Event.fixEvent();//[注]必须放在触发事件的方法里用
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_keyCode" name="link_keyCode">keyCode</b>
+keyCode() 获取 keycode 键盘码。
+<b>参数：</b>
+无。
+<b>返回：</b>
+键盘码。 
+使用方法：
+//页面加载完后对页面第一个输入框绑定键盘按下事件
+$(function(){
+	$("input").bind({
+    	onkeydown:function(){
+        	//提示按下的键盘码
+			alert(Event.keyCode())
+		}
+    });	
+});
+</pre>
+    </dd>
+	<dd>
+<pre>
+<b id="link_stop" name="link_stop">stop</b>
+stop() 停止事件。
+<b>参数：</b>
+无。
+<b>返回：</b>
+无。 
+</pre>
+    </dd>
+    <dd>
+<pre>
+<b id="link_element" name="link_element">element</b>
+element() 获取触发事件的对象。
+<b>参数：</b>
+无。
+<b>返回：</b>
+获取触发事件的对象。 
+</pre>
+    </dd>
+</dl>
+
+</div>
+<div class="top-line"></div>
+<div class="area footer">
+	<p>辽ICP备13008130号　Copyright © 20013-2016,  js-ee.cn, All Rights Reserved  </p>
+    <div class="baiducount">
+		<script type="text/javascript">
+        	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+       	 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F97686d405b084abb83a469163765e8cc' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JSEE PageContext对象</title>
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/document_index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jsee.src.min.1.5.2.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+</head>
+
+<body>
+<div class="area">
+    <div class="logo"></div>
+    <ul class="nav">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="document_Element.html">JSEE文档</a></li>
+        <li><a href="demo/menu_Map.html">JSEE案例</a></li>
+        <li><a href="menu_aboutme.html">关于我们</a></li>
+        <li><a href="menu_download.html">下载</a></li>
+        <li><a href="menu_book.html">J-SVG</a></li>
+    </ul>
+</div>
+<div class="top-line"></div>
+<div class="area">
+	<div class="entity-box">
+    	<div class="entity-o"><a href="document_Element.html#link_Element">Jsee</a></div>
+    	<div class="entity-o"><a href="document_Map.html#link_map">Map</a></div>
+        <div class="entity-o"><a href="document_Thread.html#link_thread">Thread</a></div>
+        <div class="entity-o"><a href="document_Timer.html#link_timer">Timer</a></div>
+        <div class="entity-o"><a href="document_List.html#link_list">Array</a></div>
+        <div class="entity-o"><a href="document_Event.html#link_event">Event</a></div>
+        
+    	<div class="entity-o"><a href="document_String.html#link_string">String</a></div>
+        <div class="entity-o"><a href="document_DateTool.html#link_dateTool">Date</a></div>
+    	<div class="currNav"><a href="document_PageContext.html#link_PageContext">PageContext</a></div>
+        <div class="entity-o"><a href="document_Cookie.html#link_Cookie">Cookie</a></div>
+    </div>
+    <div class="top-line"></div>
+</div>
+<div class="area b-line">
+	<div class="curr-tip">当前对象为：</div>
+    <div class="curr-o" id="link_Constant" name="link_Constant">PageContext</div>
+</div>
+<div class="area countant-bg">
+<dl>
+	<dt class="m-title">对象说明:</dt>
+	<dd class="m-title">
+    	这个对象里存放了常用的方法和属性,使用时直接用对象名点方法或属性即可
+        如：PageContext.contextPath;//获取站点根路径
+    </dd>
+</dl>
+<dl id="fn_menu">
+	<dt class="m-title">方法摘要:</dt>
+	<dd class="m-title"><h1>返回值</h1><h2>方法名</h2><h3>方法说明</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_root">contextPath</a></h2><h3>获取站点根目录</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_param">param(name)</a></h2><h3>获取url中参数</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_encode">encode(url)</a></h2><h3>将字符串转为URL编码</h3></dd>
+    <dd><h1>string</h1><h2><a href="#link_decode">decode(url)</a></h2><h3>将URL编码的字符串解码</h3></dd>
+    <dd><h1>包含宽高对象</h1><h2><a href="#link_winSize">winSize()</a></h2><h3>获取窗口大小.</h3></dd>
+</dl>
+<dl>
+	<dt>方法详细信息:</dt>
+    <dd>
+<pre>
+<b id="link_root" name="link_root">contextPath</b>
+contextPath 获取站点根目录
+<b>参数：</b>
+无。 
+使用方法：PageContext.contextPath
+<b>返回：</b>
+站点根目录。 
+</pre>    
+    </dd>
+    <dd>
+<pre>
+<b id="link_param" name="link_param">param</b>
+param(name) 获取url中参数
+<b>参数：</b>
+name - 变量名。 
+使用方法：PageContext.param(name);
+<b>返回：</b>
+url中变量。 
+</pre>    
+    </dd>
+    <dd>
+<pre>
+<b id="link_encode" name="link_encode">encode</b>
+encode(url) 将字符串转为URL编码
+<b>参数：</b>
+url - 要转码的字符串。 
+使用方法：PageContext.encode(url)
+<b>返回：</b>
+转码后的字符串。 
+</pre>    
+    </dd>
+    <dd>
+<pre>
+<b id="link_decode" name="link_decode">decode</b>
+decode(url) 将URL编码的字符串解码
+<b>参数：</b>
+url - 要解码的字符串。  
+使用方法：PageContext.decode(url)
+<b>返回：</b>
+解码后的字符串。 
+</pre>    
+    </dd>
+    <dd>
+<pre>
+<b id="link_winSize" name="link_winSize">winSize</b>
+winSize() 获取窗口大小
+<b>参数：</b>
+无。
+<b>返回：</b>
+包含宽高对象;
+例：
+PageContext.winSize().width;//获取窗口宽;
+PageContext.winSize().height;//获取窗口高;
+</pre>    
+    </dd>
+</dl>
+
+</div>
+<div class="top-line"></div>
+<div class="area footer">
+	<p>辽ICP备13008130号　Copyright © 20013-2016,  js-ee.cn, All Rights Reserved  </p>
+    <div class="baiducount">
+		<script type="text/javascript">
+        	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+       	 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F97686d405b084abb83a469163765e8cc' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</div>
+
+</body>
+</html>
